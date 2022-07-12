@@ -1,0 +1,257 @@
+
+
+
+{% load static %}
+<html>
+<head>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+
+</head>
+<body class="sss" style="background-image:url({% static 'hm/images/demo/backgrounds/bg.jpg' %});">
+
+<!-- Section: Design Block -->
+<section class="text-center text-lg-start">
+  <style>
+    .cascading-right {
+      margin-right: -50px;
+    }
+
+    @media (max-width: 991.98px) {
+      .cascading-right {
+        margin-right: 0;
+      }
+    }
+  </style>
+
+  <!-- Jumbotron -->
+  <div class="container py-4">
+    <div class="row g-0 align-items-center">
+      <div class="col-lg-6 mb-5 mb-lg-0">
+        <div class="card cascading-right" style="
+            background: hsla(0, 0%, 100%, 0.55);
+            backdrop-filter: blur(30px);
+            ">
+          <div class="card-body p-5 shadow-5 text-center">
+            <h2 class="fw-bold mb-5">Sign up now</h2>
+            <form action="" method="post">
+                {% csrf_token %}
+              <!-- 2 column grid layout with text inputs for the first and last names -->
+              <div class="row">
+                <div class="col-md-12 mb-4">
+                  <div class="form-outline">
+                    <div class="input-box">
+                      <input type="text" name="username" placeholder="Enter a username" required>
+                    </div>
+                    <label class="form-label" >Username</label>
+
+                  </div>
+                </div>
+              </div>
+
+              <!-- Email input -->
+              <div class="form-outline mb-4">
+                  <div class="input-box">
+                    <input type="email" name="email" placeholder="Enter a username" required>
+                  </div>
+                <label class="form-label" >Email   </label>
+
+              </div>
+
+              <!-- Password input -->
+              <div class="form-outline mb-4">
+                      <div class="input-box">
+                       <input type="password" name="password1" placeholder="Enter a username" required>
+                      </div>
+                      <label class="form-label" >Password</label>
+              </div>
+                <div class="form-outline mb-4">
+                        <div class="input-box">
+                          <input type="password" name="password2" placeholder="Enter a username" required>
+                       </div>
+
+                 <label class="form-label" >repeat-Password</label>
+               </div>
+
+
+              <!-- Checkbox -->
+              <!-- Submit button -->
+              <button type="submit" class="btn btn-primary btn-block mb-4">
+                Sign up
+              </button>
+              <div class="text">
+               <h6>already have an account? <a href="{% url 'login' %}">login Now</a></h6>
+              </div>
+
+
+              <!-- Register buttons -->
+            </form>
+
+          </div>
+        </div>
+      </div>
+
+<!--      <div class="col-lg-6 mb-5 mb-lg-0">-->
+<!--        <img src="https://unsplash.com/photos/74HGrqRby2Q" class="w-100 rounded-4 shadow-4"-->
+<!--          alt="" />-->
+<!--      </div>-->
+    </div>
+  </div>
+  <!-- Jumbotron -->
+</section>
+<!-- Section: Design Block -->
+
+</body>
+</html>
+
+
+<!--<form method="post" action="">-->
+<!--    {% csrf_token %}-->
+<!--    {{form.as_p}}-->
+<!--    <input type="submit" name="submit" value="submit">-->
+<!--</form>-->
+
+
+
+
+
+<!--<!DOCTYPE html>-->
+<!--<html lang="en" dir="ltr">-->
+<!--  <head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+<!--    <style>-->
+<!--    @import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');-->
+<!--*{-->
+<!--  margin: 0;-->
+<!--  padding: 0;-->
+<!--  box-sizing: border-box;-->
+<!--  font-family: 'Poppins', sans-serif;-->
+<!--}-->
+<!--body{-->
+<!--  min-height: 100vh;-->
+<!--  display: flex;-->
+<!--  align-items: center;-->
+<!--  justify-content: center;-->
+<!--  background: #4070f4;-->
+<!--}-->
+<!--.wrapper{-->
+<!--  position: relative;-->
+<!--  max-width: 430px;-->
+<!--  width: 100%;-->
+<!--  background: #fff;-->
+<!--  padding: 34px;-->
+<!--  border-radius: 6px;-->
+<!--  box-shadow: 0 5px 10px rgba(0,0,0,0.2);-->
+<!--}-->
+<!--.wrapper h2{-->
+<!--  position: relative;-->
+<!--  font-size: 22px;-->
+<!--  font-weight: 600;-->
+<!--  color: #333;-->
+<!--}-->
+<!--.wrapper h2::before{-->
+<!--  content: '';-->
+<!--  position: absolute;-->
+<!--  left: 0;-->
+<!--  bottom: 0;-->
+<!--  height: 3px;-->
+<!--  width: 28px;-->
+<!--  border-radius: 12px;-->
+<!--  background: #4070f4;-->
+<!--}-->
+<!--.wrapper form{-->
+<!--  margin-top: 30px;-->
+<!--}-->
+<!--.wrapper form .input-box{-->
+<!--  height: 52px;-->
+<!--  margin: 18px 0;-->
+<!--}-->
+<!--form .input-box input{-->
+<!--  height: 100%;-->
+<!--  width: 100%;-->
+<!--  outline: none;-->
+<!--  padding: 0 15px;-->
+<!--  font-size: 17px;-->
+<!--  font-weight: 400;-->
+<!--  color: #333;-->
+<!--  border: 1.5px solid #C7BEBE;-->
+<!--  border-bottom-width: 2.5px;-->
+<!--  border-radius: 6px;-->
+<!--  transition: all 0.3s ease;-->
+<!--}-->
+<!--.input-box input:focus,-->
+<!--.input-box input:valid{-->
+<!--  border-color: #4070f4;-->
+<!--}-->
+<!--form .policy{-->
+<!--  display: flex;-->
+<!--  align-items: center;-->
+<!--}-->
+<!--form h3{-->
+<!--  color: #707070;-->
+<!--  font-size: 14px;-->
+<!--  font-weight: 500;-->
+<!--  margin-left: 10px;-->
+<!--}-->
+<!--.input-box.button input{-->
+<!--  color: #fff;-->
+<!--  letter-spacing: 1px;-->
+<!--  border: none;-->
+<!--  background: #4070f4;-->
+<!--  cursor: pointer;-->
+<!--}-->
+<!--.input-box.button input:hover{-->
+<!--  background: #0e4bf1;-->
+<!--}-->
+<!--form .text h3{-->
+<!-- color: #333;-->
+<!-- width: 100%;-->
+<!-- text-align: center;-->
+<!--}-->
+<!--form .text h3 a{-->
+<!--  color: #4070f4;-->
+<!--  text-decoration: none;-->
+<!--}-->
+<!--form .text h3 a:hover{-->
+<!--  text-decoration: underline;-->
+<!--}-->
+<!-- </style>-->
+
+<!--   </head>-->
+<!--<body>-->
+<!--  <div class="wrapper">-->
+<!--    <h2>Registration</h2>-->
+<!--    <form action="" method="post">-->
+<!--       {% csrf_token %}-->
+<!--      <div class="input-box">-->
+<!--&lt;!&ndash;          {{form.username}}&ndash;&gt;-->
+<!--        <input type="text" name="username" placeholder="Enter a username" required>-->
+<!--      </div>-->
+<!--      <div class="input-box">-->
+<!--&lt;!&ndash;          {{form.email}}&ndash;&gt;-->
+<!--        <input type="email" name="email"placeholder="Enter your email" required>-->
+<!--      </div>-->
+<!--      <div class="input-box">-->
+<!--&lt;!&ndash;           {{form.password1}}&ndash;&gt;-->
+<!--        <input type="password" name="password1" placeholder="Create password" required>-->
+<!--      </div>-->
+<!--      <div class="input-box">-->
+<!--&lt;!&ndash;           {{form.password2}}&ndash;&gt;-->
+<!--        <input type="password" name="password2" placeholder="Confirm password" required>-->
+<!--      </div>-->
+<!--      <div class="policy">-->
+<!--        <input type="checkbox">-->
+<!--        <h3>I accept all terms & condition</h3>-->
+<!--      </div>-->
+<!--      <div class="input-box button">-->
+<!--        <input type="Submit" name="submit" value="Register Now">-->
+<!--      </div>-->
+<!--      <div class="text">-->
+<!--        <h3>Already have an account? <a href="{% url 'login' %}">Login now</a></h3>-->
+<!--      </div>-->
+<!--    </form>-->
+<!--  </div>-->
+<!--</body>-->
+<!--</html>-->
+
